@@ -1,0 +1,35 @@
+Rio de Janeiro, 02/06/2015
+
+Relatório de participação Entrega 4:
+
+Participação separada por arquivos:
+
+Classes do projeto:
+
+DAO:
+Arquivo - Bernardo,Cesar e Lucas
+
+GUI:
+
+GuiInicial - Cesar e Bernardo
+GuiQUiz - Cesar,Bernardo e Lucas
+GuiProfessor - Bernardo,Cesar, Lucas 
+GuiTUtorial - Bernardo
+GuiTutorialEnsino - Bernardo
+GuiFInal - Bernardo e Cesar
+
+NEGOCIO:
+Triangulo - Cesar
+Questao - Cesar,Bernardo
+Avaliacao - Cesar,Bernardo e Lucas
+Quiz - Cesar e Bernardo e Lucas
+Resultado - Cesar,Bernardo e Lucas
+
+
+Diagrama de Classes:
+Cesar
+
+Casos de Uso:
+Jogar - Cesar e Bernardo
+Obter Resultado - Cesar e Bernardo
+Visualizar Tutorial do Jogo - Cesar

@@ -1,10 +1,9 @@
 package NEGOCIO;
+
 /**
  *
  * @author Cesar Luis
  */
-
-
 import GUI.GuiQuiz;
 
 public class Questao {

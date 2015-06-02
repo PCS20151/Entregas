@@ -4,7 +4,6 @@ package DAO;
  *
  * @author Bernardo Gouvêa, Cesar Luis e Lucas Guilhon
  */
-
 import GUI.GuiInicial;
 import GUI.GuiQuiz;
 import java.io.BufferedReader;

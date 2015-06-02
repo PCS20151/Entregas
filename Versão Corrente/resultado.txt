@@ -6,3 +6,4 @@ Nome:aefaefaegfa   Aproveitamento: 15.0
 Nome:afaefaefaef   Aproveitamento: 30.0
 Nome:Saulo   Aproveitamento: 20.0
 Nome:Cesar   Aproveitamento: 15.0
+Nome:Cesar   Aproveitamento: 0.0

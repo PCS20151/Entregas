@@ -7,8 +7,6 @@ package GUI;
 
 import NEGOCIO.*;
 
-
-
 /**
  *
  * @author Bernardo Gouvêa e Cesar Luis

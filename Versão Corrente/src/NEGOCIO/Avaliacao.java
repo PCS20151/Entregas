@@ -4,7 +4,6 @@ package NEGOCIO;
  *
  * @author Bernardo Gouvêa, Cesar Luis e Lucas Guilhon
  */
-
 import GUI.*;
 
 public class Avaliacao {
