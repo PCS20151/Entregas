@@ -9,7 +9,7 @@ import NEGOCIO.*;
 
 /**
  *
- * @author cesar
+ * @author Bernardo Gouvêa
  */
 public class GuiTutorialEnsino extends javax.swing.JFrame {
 
@@ -19,6 +19,27 @@ public class GuiTutorialEnsino extends javax.swing.JFrame {
     public GuiTutorialEnsino() {
         initComponents();
         labelNomeAlunoTutorial.setText(Avaliacao.getNome());
+        if ((Resultado.getResultadoLa() == 4) && (Resultado.getResultadoAn() == 4) && (Resultado.getResultadoPe() == 4) && (Resultado.getResultadoAr() == 4)) {
+            labelApoioTudo1.setText("Meus Parabéns meu caro Padawan, você sabe tudo sobre Trigonometria!!!");
+        } else if ((Resultado.getResultadoLa() < 4) && (Resultado.getResultadoAn() == 4) && (Resultado.getResultadoPe() == 4) && (Resultado.getResultadoAr() == 4)) {
+            labelApoioTudo1.setText("Parabéns, você quase acertou tudo!");
+            labelApoioTudo2.setText("Mas agora você precisa aprender mais como calcular lados de triângulos.");
+        } else if ((Resultado.getResultadoLa() == 4) && (Resultado.getResultadoAn() < 4) && (Resultado.getResultadoPe() == 4) && (Resultado.getResultadoAr() == 4)) {
+            labelApoioTudo1.setText("Parabéns, você quase acertou tudo!");
+            labelApoioTudo2.setText("Mas agora você precisa aprender mais como calcular ângulos de triângulos.");
+        } else if ((Resultado.getResultadoLa() == 4) && (Resultado.getResultadoAn() == 4) && (Resultado.getResultadoPe() < 4) && (Resultado.getResultadoAr() == 4)) {
+            labelApoioTudo1.setText("Parabéns, você quase acertou tudo!");
+            labelApoioTudo2.setText("Mas agora você precisa aprender mais como perímetro lados de triângulos.");
+        } else if ((Resultado.getResultadoLa() == 4) && (Resultado.getResultadoAn() == 4) && (Resultado.getResultadoPe() == 4) && (Resultado.getResultadoAr() < 4)) {
+            labelApoioTudo1.setText("Parabéns, você quase acertou tudo!");
+            labelApoioTudo2.setText("Mas agora você precisa aprender mais como calcular área de triângulos.");
+        } else if ((Resultado.getResultadoLa() > 0) && (Resultado.getResultadoLa() < 4) && (Resultado.getResultadoAn() > 0) && (Resultado.getResultadoAn() < 4) && (Resultado.getResultadoPe() > 0) && (Resultado.getResultadoPe() < 4) && (Resultado.getResultadoAr() > 0) && (Resultado.getResultadoAr() < 4)) {
+            labelApoioTudo1.setText("Parabéns, você quase acertou tudo!");
+            labelApoioTudo2.setText("Mas não conseguiu êxito completo em nenhum item, agora você precisa prestar mais atenção em alguns casos.");
+        } else if ((Resultado.getResultadoLa() < 1) && (Resultado.getResultadoAn() < 1) && (Resultado.getResultadoPe() < 1) && (Resultado.getResultadoAr() < 1)) {
+            labelApoioTudo1.setText("Meu querido, você errou tudo!!!");
+            labelApoioTudo2.setText("Mas não desanime, você conseguirá da próxima vez, agora você precisa prestar mais atenção ao estudar.");
+        }
     }
 
     /**
@@ -31,20 +52,30 @@ public class GuiTutorialEnsino extends javax.swing.JFrame {
     private void initComponents() {
 
         panelTutorial = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtAreaTutorialEnsino = new javax.swing.JTextArea();
         labelAlunoTutorial = new javax.swing.JLabel();
         botaoSairTutorial = new javax.swing.JButton();
         labelNomeAlunoTutorial = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        labelApoioTudo1 = new javax.swing.JLabel();
+        labelApoioTudo2 = new javax.swing.JLabel();
+        labelApoioDicas = new javax.swing.JLabel();
+        labelCalculoLado = new javax.swing.JLabel();
+        labelCalculoAngulo = new javax.swing.JLabel();
+        labelCalculoPerimetro = new javax.swing.JLabel();
+        labelCalculoArea = new javax.swing.JLabel();
+        labelRespostaCalculoLado = new javax.swing.JLabel();
+        labelRespostaCalculoAngulo = new javax.swing.JLabel();
+        labelRespostaCalculoPerimetro = new javax.swing.JLabel();
+        labelRespostaCalculoArea = new javax.swing.JLabel();
+        labelJogoFeitoPorEnsino = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtAreaTutorialEnsino.setColumns(20);
-        txtAreaTutorialEnsino.setRows(5);
-        txtAreaTutorialEnsino.setText("\nb) Eu vejo o problema de vocês como um Jogo que tem vários Quiz (list de quiz). Um Quiz \ntem várias instâncias de Questao. Cada Questao tem um Triangulo e as respostas do \naluno para as perguntas (área, perímetro, etc).\n\n\nd)salvando todo o Jogo (e seus respectivos objetos associados) em um único \narquivo xml que seria carregado a cada nova execução do programa.\n\n\ne) Eu vejo a parte de estatísticas do jogo como algo similar ao que está no jogo da \nortografia (represente os totais em uma classe, isolando esses totais de como eles \npodem ser apresentados em um arquivo ou em uma tela de resultado). \n\n\n");
-        jScrollPane1.setViewportView(txtAreaTutorialEnsino);
+        panelTutorial.setBackground(java.awt.Color.white);
+        panelTutorial.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 255, 0)));
+        panelTutorial.setPreferredSize(new java.awt.Dimension(700, 500));
 
+        labelAlunoTutorial.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         labelAlunoTutorial.setText("Aluno:");
 
         botaoSairTutorial.setText("Encerrar Jogo");
@@ -56,45 +87,126 @@ public class GuiTutorialEnsino extends javax.swing.JFrame {
 
         labelNomeAlunoTutorial.setText("NomeAluno");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Tutorial de Apoio ao Ensino");
+
+        labelApoioTudo1.setText("jLabel2");
+
+        labelApoioTudo2.setText("jLabel2");
+
+        labelApoioDicas.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelApoioDicas.setText("Veja abaixo agora algumas dicas de estudos de Trigonometria:");
+
+        labelCalculoLado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelCalculoLado.setText("Como achar o 3º lado do Triângulo:");
+
+        labelCalculoAngulo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelCalculoAngulo.setText("Como achar o 3º ângulo do Triângulo:");
+
+        labelCalculoPerimetro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelCalculoPerimetro.setText("Como achar o perímetro do Triângulo:");
+
+        labelCalculoArea.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelCalculoArea.setText("Como achar a área do Triângulo:");
+
+        labelRespostaCalculoLado.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        labelRespostaCalculoLado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/CalculoLadoTriangulo.png"))); // NOI18N
+
+        labelRespostaCalculoAngulo.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        labelRespostaCalculoAngulo.setText("180º = angulo1 + angulo2 + angulo3");
+
+        labelRespostaCalculoPerimetro.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        labelRespostaCalculoPerimetro.setText("2p = lado1 * lado2 * lado3");
+
+        labelRespostaCalculoArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/CalculoAreaTeoremaHerao.png"))); // NOI18N
+
+        labelJogoFeitoPorEnsino.setText("Um jogo feito por: Bernardo Gouvêa, César Barbosa, Lucas Guilhon");
 
         javax.swing.GroupLayout panelTutorialLayout = new javax.swing.GroupLayout(panelTutorial);
         panelTutorial.setLayout(panelTutorialLayout);
         panelTutorialLayout.setHorizontalGroup(
             panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTutorialLayout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(labelJogoFeitoPorEnsino)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botaoSairTutorial)
+                .addGap(20, 20, 20))
             .addGroup(panelTutorialLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTutorialLayout.createSequentialGroup()
+                        .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelTutorialLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelAlunoTutorial)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelNomeAlunoTutorial))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelTutorialLayout.createSequentialGroup()
+                                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelCalculoArea, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelTutorialLayout.createSequentialGroup()
+                                        .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelCalculoLado)
+                                            .addComponent(labelCalculoAngulo))
+                                        .addGap(48, 48, 48)
+                                        .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelRespostaCalculoLado)
+                                            .addComponent(labelRespostaCalculoArea)
+                                            .addComponent(labelRespostaCalculoAngulo, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(labelRespostaCalculoPerimetro, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
                     .addGroup(panelTutorialLayout.createSequentialGroup()
                         .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(panelTutorialLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(botaoSairTutorial)))
-                        .addGap(24, 24, 24))
-                    .addGroup(panelTutorialLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                        .addComponent(labelAlunoTutorial)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelNomeAlunoTutorial)
-                        .addGap(141, 141, 141))))
+                            .addComponent(labelCalculoPerimetro)
+                            .addComponent(labelApoioDicas)
+                            .addComponent(labelApoioTudo2)
+                            .addComponent(labelApoioTudo1))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panelTutorialLayout.setVerticalGroup(
             panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTutorialLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelAlunoTutorial)
-                        .addComponent(labelNomeAlunoTutorial)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                .addGap(25, 25, 25)
-                .addComponent(botaoSairTutorial)
-                .addContainerGap())
+                    .addGroup(panelTutorialLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel1))
+                    .addGroup(panelTutorialLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelNomeAlunoTutorial)
+                            .addComponent(labelAlunoTutorial))))
+                .addGap(34, 34, 34)
+                .addComponent(labelApoioTudo1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelApoioTudo2)
+                .addGap(18, 18, 18)
+                .addComponent(labelApoioDicas)
+                .addGap(35, 35, 35)
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelRespostaCalculoLado)
+                    .addGroup(panelTutorialLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(labelCalculoLado)))
+                .addGap(18, 18, 18)
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCalculoAngulo)
+                    .addComponent(labelRespostaCalculoAngulo))
+                .addGap(30, 30, 30)
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelRespostaCalculoPerimetro, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelCalculoPerimetro))
+                .addGap(18, 18, 18)
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelCalculoArea, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelRespostaCalculoArea, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoSairTutorial)
+                    .addComponent(labelJogoFeitoPorEnsino))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,10 +266,20 @@ public class GuiTutorialEnsino extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoSairTutorial;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAlunoTutorial;
+    private javax.swing.JLabel labelApoioDicas;
+    private javax.swing.JLabel labelApoioTudo1;
+    private javax.swing.JLabel labelApoioTudo2;
+    private javax.swing.JLabel labelCalculoAngulo;
+    private javax.swing.JLabel labelCalculoArea;
+    private javax.swing.JLabel labelCalculoLado;
+    private javax.swing.JLabel labelCalculoPerimetro;
+    private javax.swing.JLabel labelJogoFeitoPorEnsino;
     private javax.swing.JLabel labelNomeAlunoTutorial;
+    private javax.swing.JLabel labelRespostaCalculoAngulo;
+    private javax.swing.JLabel labelRespostaCalculoArea;
+    private javax.swing.JLabel labelRespostaCalculoLado;
+    private javax.swing.JLabel labelRespostaCalculoPerimetro;
     private javax.swing.JPanel panelTutorial;
-    private javax.swing.JTextArea txtAreaTutorialEnsino;
     // End of variables declaration//GEN-END:variables
 }

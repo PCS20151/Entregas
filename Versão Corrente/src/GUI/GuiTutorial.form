@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panelTutorial" alignment="0" max="32767" attributes="0"/>
+          <Component id="panelTutorial" alignment="0" pref="700" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -34,27 +34,47 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="panelTutorial">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+            <MatteColorBorder>
+              <Color PropertyName="color" blue="0" green="ff" red="ff" type="rgb"/>
+            </MatteColorBorder>
+          </Border>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[650, 500]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="botaoSairTutorial" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="229" max="32767" attributes="0"/>
+                          <EmptySpace pref="430" max="32767" attributes="0"/>
                           <Component id="labelAlunoTutorial" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="labelNomeAlunoTutorial" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="botaoFinalizarTutorial" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="labelJogoFeitoPorTutorial" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -63,52 +83,39 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelAlunoTutorial" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelNomeAlunoTutorial" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labelNomeAlunoTutorial" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelAlunoTutorial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="308" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="botaoSairTutorial" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" pref="382" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="labelJogoFeitoPorTutorial" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoFinalizarTutorial" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextArea" name="txtAreaTutorialJogo">
-              <Properties>
-                <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="&#xa;b) Eu vejo o problema de voc&#xea;s como um Jogo que tem v&#xe1;rios Quiz (list de quiz). Um Quiz &#xa;tem v&#xe1;rias inst&#xe2;ncias de Questao. Cada Questao tem um Triangulo e as respostas do &#xa;aluno para as perguntas (&#xe1;rea, per&#xed;metro, etc).&#xa;&#xa;&#xa;d)salvando todo o Jogo (e seus respectivos objetos associados) em um &#xfa;nico &#xa;arquivo xml que seria carregado a cada nova execu&#xe7;&#xe3;o do programa.&#xa;&#xa;&#xa;e) Eu vejo a parte de estat&#xed;sticas do jogo como algo similar ao que est&#xe1; no jogo da &#xa;ortografia (represente os totais em uma classe, isolando esses totais de como eles &#xa;podem ser apresentados em um arquivo ou em uma tela de resultado). &#xa;&#xa;&#xa;"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JLabel" name="labelAlunoTutorial">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="13" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Aluno:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="botaoSairTutorial">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Finalizar Tutorial "/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSairTutorialActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="labelNomeAlunoTutorial">
           <Properties>
@@ -123,6 +130,43 @@
             <Property name="text" type="java.lang.String" value="Tutorial do Jogo"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="labelJogoFeitoPorTutorial">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Um jogo feito por: Bernardo Gouv&#xea;a, C&#xe9;sar Barbosa, Lucas Guilhon"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="botaoFinalizarTutorial">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Finalizar Tutorial"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoFinalizarTutorialActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextArea1">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="Iniciando o Quiz Trigonometria:&#xa;     O Quiz apresentar&#xe1; quest&#xf5;es para que voc&#xea; responda os seguintes itens:&#xa;&#xa;          - Dados 2 lados de um Tri&#xe2;ngulo qualquer, calcule o terceiro lado deste Tri&#xe2;ngulo.&#xa;&#xa;          - Dados 2 &#xe2;ngulos de um Tri&#xe2;ngulo qualquer, calcule o terceiro &#xe2;ngulo deste &#xa;Tri&#xe2;ngulo.&#xa;&#xa;          - Dados 2 lados de um Tri&#xe2;ngulo qualquer, e calculado o terceiro lado anteriormente,&#xa;encontre o Per&#xed;metro do Tri&#xe2;ngulo.&#xa;&#xa;          - Dados 2 lados e 2 &#xe2;ngulos e, calculado o terceiro lado e terceiro &#xe2;ngulo, encontre &#xa;a &#xe1;rea do Tri&#xe2;ngulo.&#xa;&#xa;     Ao final de todas as quest&#xf5;es respondidas, voc&#xea; ser&#xe1; apresentado ao seu resultado e ao&#xa;seu aproveitamento.&#xa;&#xa;     O Quiz pode ser feito quantas vezes quiser.&#xa;     Todo resultado e aproveitamento de cada aluno ser&#xe1; armazenado e mostrado ao&#xa;professor da mat&#xe9;ria."/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

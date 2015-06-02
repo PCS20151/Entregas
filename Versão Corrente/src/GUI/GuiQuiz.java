@@ -4,15 +4,19 @@
  * and open the template in the editor.
  */
 package GUI;
+
 import NEGOCIO.*;
+
 /**
  *
- * @author cesar
+ * @author Bernardo Gouvêa e Cesar Luis
  */
 public class GuiQuiz extends javax.swing.JFrame {
-    public static double auxLadoCA,auxAreaA,auxPerim,auxAnguloC;
+
+    public static double auxLadoCA, auxAreaA, auxPerim, auxAnguloC;
     public static Quiz Qz;
     public static Resultado R;
+
     public static double getAuxLadoCA() {
         return auxLadoCA;
     }
@@ -28,6 +32,7 @@ public class GuiQuiz extends javax.swing.JFrame {
     public static double getAuxAnguloC() {
         return auxAnguloC;
     }
+
     /**
      * Creates new form GuiQuiz
      */
@@ -35,14 +40,15 @@ public class GuiQuiz extends javax.swing.JFrame {
         initComponents();
         Qz = new Quiz();
         labelNomeAlunoQuiz.setText(Avaliacao.getNome());
-        ladoAB.setText(String.valueOf(Qz.Q.T.getLado(1)));
-        ladoBC.setText(String.valueOf(Qz.Q.T.getLado(2)));
-        anguloA.setText(String.valueOf((int)Qz.Q.T.getAngulo(1)));
-        anguloB.setText(String.valueOf((int)Qz.Q.T.getAngulo(2)));
-        jLabel6.setText(String.valueOf(Qz.Q.T.getLado3()));
-        jLabel7.setText(String.valueOf(Qz.Q.T.getAngulo(3)));
-        jLabel8.setText(String.valueOf(Qz.Q.T.getPerimetro()));
-        jLabel9.setText(String.valueOf(Qz.Q.T.getArea()));
+        labelladoAB.setText(String.valueOf(Qz.Q.T.getLado(1)));
+        labelladoBC.setText(String.valueOf(Qz.Q.T.getLado(2)));
+        labelanguloA.setText(String.valueOf((int) Qz.Q.T.getAngulo(1)));
+        labelanguloB.setText(String.valueOf((int) Qz.Q.T.getAngulo(2)));
+        labelRespostaLadoCA.setText(String.valueOf(Qz.Q.T.getLado3()));
+        labelRespostaAnguloC.setText(String.valueOf(Qz.Q.T.getAngulo(3)));
+        labelRespostaPerimetro.setText(String.valueOf(Qz.Q.T.getPerimetro()));
+        labelRespostaArea.setText(String.valueOf(Qz.Q.T.getArea()));
+        labelQuestaoNumero.setText(String.valueOf(GuiInicial.getContador()));
     }
 
     /**
@@ -55,77 +61,80 @@ public class GuiQuiz extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        ladoAB = new javax.swing.JLabel();
-        ladoBC = new javax.swing.JLabel();
-        anguloA = new javax.swing.JLabel();
-        anguloB = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        labelLadoAB = new javax.swing.JLabel();
+        labelLadoBC = new javax.swing.JLabel();
+        labelAnguloA = new javax.swing.JLabel();
+        labelAnguloB = new javax.swing.JLabel();
+        labelladoAB = new javax.swing.JLabel();
+        labelladoBC = new javax.swing.JLabel();
+        labelanguloA = new javax.swing.JLabel();
+        labelanguloB = new javax.swing.JLabel();
+        labelCmLadoAB = new javax.swing.JLabel();
+        labelCmLadoBC = new javax.swing.JLabel();
+        labelOAnguloA = new javax.swing.JLabel();
+        labelOAnguloB = new javax.swing.JLabel();
+        labelDescubraValores = new javax.swing.JLabel();
+        labelDadosValores = new javax.swing.JLabel();
         txtLadoCA = new javax.swing.JTextField();
         txtAnguloC = new javax.swing.JTextField();
         txtPerimetroP = new javax.swing.JTextField();
         txtAreaA = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        labelLadoCAQuiz = new javax.swing.JLabel();
+        labelAnguloCQuiz = new javax.swing.JLabel();
+        labelPerimetroQuiz = new javax.swing.JLabel();
+        labelAreaQuiz = new javax.swing.JLabel();
         botaoProximaQuestaoQuiz = new javax.swing.JButton();
         botaoTutorialQuiz = new javax.swing.JButton();
         labelAlunoQuiz = new javax.swing.JLabel();
         labelNomeAlunoQuiz = new javax.swing.JLabel();
         botaoSairQuiz = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        labelRespostaLadoCA = new javax.swing.JLabel();
+        labelRespostaAnguloC = new javax.swing.JLabel();
+        labelRespostaPerimetro = new javax.swing.JLabel();
+        labelRespostaArea = new javax.swing.JLabel();
+        labelDesenhoTriangulo = new javax.swing.JLabel();
+        labelQuestaoTexto = new javax.swing.JLabel();
+        labelQuestaoNumero = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel1.setBackground(java.awt.Color.white);
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 0)));
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 500));
 
-        jLabel2.setText("lado AB:");
+        labelLadoAB.setText("lado AB:");
 
-        jLabel3.setText("lado BC:");
+        labelLadoBC.setText("lado BC:");
 
-        jLabel4.setText("ângulo A:");
+        labelAnguloA.setText("ângulo A:");
 
-        jLabel5.setText("ângulo B:");
+        labelAnguloB.setText("ângulo B:");
 
-        ladoAB.setForeground(new java.awt.Color(255, 0, 51));
-        ladoAB.setText("AB");
+        labelladoAB.setForeground(new java.awt.Color(255, 0, 51));
+        labelladoAB.setText("AB");
 
-        ladoBC.setForeground(new java.awt.Color(255, 0, 51));
-        ladoBC.setText("BC");
+        labelladoBC.setForeground(new java.awt.Color(255, 0, 51));
+        labelladoBC.setText("BC");
 
-        anguloA.setForeground(new java.awt.Color(255, 0, 51));
-        anguloA.setText("Â");
+        labelanguloA.setForeground(new java.awt.Color(255, 0, 51));
+        labelanguloA.setText("Â");
 
-        anguloB.setForeground(new java.awt.Color(255, 0, 51));
-        anguloB.setText("B^");
+        labelanguloB.setForeground(new java.awt.Color(255, 0, 51));
+        labelanguloB.setText("B^");
 
-        jLabel10.setText("cm");
+        labelCmLadoAB.setText("cm");
 
-        jLabel11.setText("cm");
+        labelCmLadoBC.setText("cm");
 
-        jLabel12.setText("º");
+        labelOAnguloA.setText("º");
 
-        jLabel13.setText("º");
+        labelOAnguloB.setText("º");
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setText("Descubra os valores abaixo:");
+        labelDescubraValores.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelDescubraValores.setText("Descubra os valores abaixo:");
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setText("Dados os valores de lados do triangulo sendo: ");
+        labelDadosValores.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelDadosValores.setText("Dados os valores de lados do triangulo sendo: ");
 
         txtLadoCA.setText("0");
         txtLadoCA.addActionListener(new java.awt.event.ActionListener() {
@@ -145,17 +154,17 @@ public class GuiQuiz extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel16.setText("Lado CA");
+        labelLadoCAQuiz.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        labelLadoCAQuiz.setText("Lado CA");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel18.setText("Ângulo C");
+        labelAnguloCQuiz.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        labelAnguloCQuiz.setText("Ângulo C");
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel19.setText("Perímetro");
+        labelPerimetroQuiz.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        labelPerimetroQuiz.setText("Perímetro");
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel20.setText("Área");
+        labelAreaQuiz.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        labelAreaQuiz.setText("Área");
 
         botaoProximaQuestaoQuiz.setText("Próxima Questão");
         botaoProximaQuestaoQuiz.addActionListener(new java.awt.event.ActionListener() {
@@ -171,6 +180,7 @@ public class GuiQuiz extends javax.swing.JFrame {
             }
         });
 
+        labelAlunoQuiz.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         labelAlunoQuiz.setText("Aluno:");
 
         labelNomeAlunoQuiz.setText("NomeAluno");
@@ -182,174 +192,179 @@ public class GuiQuiz extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("jLabel6");
+        labelRespostaLadoCA.setText("jLabel6");
 
-        jLabel7.setText("jLabel7");
+        labelRespostaAnguloC.setText("jLabel7");
 
-        jLabel8.setText("jLabel8");
+        labelRespostaPerimetro.setText("jLabel8");
 
-        jLabel9.setText("jLabel9");
+        labelRespostaArea.setText("jLabel9");
+
+        labelDesenhoTriangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/TrianguloABC.JPG"))); // NOI18N
+
+        labelQuestaoTexto.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        labelQuestaoTexto.setText("Questão");
+
+        labelQuestaoNumero.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        labelQuestaoNumero.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(botaoTutorialQuiz))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
-                                .addGap(167, 167, 167)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(anguloA)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel12)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(anguloB)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel13))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(ladoAB)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel10)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ladoBC)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel11))
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(labelAlunoQuiz)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(labelNomeAlunoQuiz)))))
-                        .addContainerGap(161, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(49, 49, 49)
-                                        .addComponent(jLabel17))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel20))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtAreaA, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtPerimetroP, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                                        .addComponent(txtAnguloC)
-                                        .addComponent(txtLadoCA)))))
-                        .addGap(198, 198, 198))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(89, 89, 89))
+                        .addGap(31, 31, 31)
+                        .addComponent(botaoTutorialQuiz))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(labelQuestaoTexto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelQuestaoNumero))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(labelDesenhoTriangulo)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botaoProximaQuestaoQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(labelAlunoQuiz)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelNomeAlunoQuiz))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelDadosValores)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(labelAnguloA, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(labelanguloA)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(labelOAnguloA)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(labelAnguloB, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(labelanguloB)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(labelOAnguloB))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(labelLadoAB, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(labelladoAB)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(labelCmLadoAB)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(labelLadoBC, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(labelladoBC)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(labelCmLadoBC))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(59, 59, 59))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelAreaQuiz)
+                                            .addComponent(labelAnguloCQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(labelLadoCAQuiz)
+                                            .addComponent(labelPerimetroQuiz))
+                                        .addGap(20, 20, 20)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtPerimetroP, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                                            .addComponent(txtAnguloC)
+                                            .addComponent(txtLadoCA)
+                                            .addComponent(txtAreaA))
+                                        .addGap(50, 50, 50)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelRespostaLadoCA)
+                                            .addComponent(labelRespostaAnguloC)
+                                            .addComponent(labelRespostaPerimetro)
+                                            .addComponent(labelRespostaArea)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(labelDescubraValores)
+                                        .addGap(90, 90, 90)))))
+                        .addGap(72, 72, 72))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(botaoSairQuiz)
-                        .addGap(21, 21, 21))))
+                        .addGap(59, 59, 59))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(botaoProximaQuestaoQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAlunoQuiz)
-                    .addComponent(labelNomeAlunoQuiz))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(ladoAB)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel3)
-                            .addComponent(ladoBC)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(anguloA)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel5)
-                            .addComponent(anguloB)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtLadoCA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAnguloC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel18))
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPerimetroP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAreaA, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel9)))
+                    .addComponent(labelNomeAlunoQuiz)
+                    .addComponent(labelAlunoQuiz))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelDadosValores, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelQuestaoTexto)
+                    .addComponent(labelQuestaoNumero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botaoTutorialQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoProximaQuestaoQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoSairQuiz)
-                .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelLadoAB)
+                            .addComponent(labelladoAB)
+                            .addComponent(labelCmLadoAB)
+                            .addComponent(labelLadoBC)
+                            .addComponent(labelladoBC)
+                            .addComponent(labelCmLadoBC))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelAnguloA)
+                            .addComponent(labelanguloA)
+                            .addComponent(labelOAnguloA)
+                            .addComponent(labelAnguloB)
+                            .addComponent(labelanguloB)
+                            .addComponent(labelOAnguloB))
+                        .addGap(18, 18, 18)
+                        .addComponent(labelDescubraValores, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelLadoCAQuiz)
+                            .addComponent(txtLadoCA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelRespostaLadoCA))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelAnguloCQuiz)
+                            .addComponent(txtAnguloC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelRespostaAnguloC))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelPerimetroQuiz)
+                            .addComponent(txtPerimetroP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelRespostaPerimetro)))
+                    .addComponent(labelDesenhoTriangulo))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelAreaQuiz)
+                            .addComponent(txtAreaA, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelRespostaArea))
+                        .addGap(40, 40, 40)
+                        .addComponent(botaoProximaQuestaoQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(botaoSairQuiz)
+                                .addGap(23, 23, 23))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(botaoTutorialQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34))))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,6 +374,15 @@ public class GuiQuiz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoSairQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairQuizActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_botaoSairQuizActionPerformed
+
+    private void botaoTutorialQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTutorialQuizActionPerformed
+        new GuiTutorial().setVisible(true);
+    }//GEN-LAST:event_botaoTutorialQuizActionPerformed
+
     private void botaoProximaQuestaoQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoProximaQuestaoQuizActionPerformed
         // TODO add your handling code here:
         auxLadoCA = Double.parseDouble(txtLadoCA.getText());
@@ -366,37 +390,25 @@ public class GuiQuiz extends javax.swing.JFrame {
         auxPerim = Double.parseDouble(txtPerimetroP.getText());
         auxAnguloC = Double.parseDouble(txtAnguloC.getText());
         GuiInicial.setContador();
-        if (GuiInicial.getContador()<= GuiInicial.getMAXIMOQUESTOES()){
-            Resultado.setResultado(auxLadoCA,auxAreaA,auxPerim,auxAnguloC);
+        if (GuiInicial.getContador() <= GuiInicial.getMAXIMOQUESTOES()) {
+            Resultado.setResultado(auxLadoCA, auxAreaA, auxPerim, auxAnguloC);
             new GuiQuiz().setVisible(true);
             dispose();
-        }
-        else{
-            Resultado.setResultado(auxLadoCA,auxAreaA,auxPerim,auxAnguloC);
+        } else {
+            Resultado.setResultado(auxLadoCA, auxAreaA, auxPerim, auxAnguloC);
             new GuiFinal().setVisible(true);
             dispose();
-        } 
-            
-        
-        
+        }
+
     }//GEN-LAST:event_botaoProximaQuestaoQuizActionPerformed
-
-    private void botaoTutorialQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTutorialQuizActionPerformed
-        new GuiTutorial().setVisible(true);
-    }//GEN-LAST:event_botaoTutorialQuizActionPerformed
-
-    private void txtLadoCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLadoCAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLadoCAActionPerformed
-
-    private void botaoSairQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairQuizActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_botaoSairQuizActionPerformed
 
     private void txtAreaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAreaAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAreaAActionPerformed
+
+    private void txtLadoCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLadoCAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLadoCAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -434,36 +446,37 @@ public class GuiQuiz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel anguloA;
-    private javax.swing.JLabel anguloB;
     private javax.swing.JButton botaoProximaQuestaoQuiz;
     private javax.swing.JButton botaoSairQuiz;
     private javax.swing.JButton botaoTutorialQuiz;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelAlunoQuiz;
+    private javax.swing.JLabel labelAnguloA;
+    private javax.swing.JLabel labelAnguloB;
+    private javax.swing.JLabel labelAnguloCQuiz;
+    private javax.swing.JLabel labelAreaQuiz;
+    private javax.swing.JLabel labelCmLadoAB;
+    private javax.swing.JLabel labelCmLadoBC;
+    private javax.swing.JLabel labelDadosValores;
+    private javax.swing.JLabel labelDescubraValores;
+    private javax.swing.JLabel labelDesenhoTriangulo;
+    private javax.swing.JLabel labelLadoAB;
+    private javax.swing.JLabel labelLadoBC;
+    private javax.swing.JLabel labelLadoCAQuiz;
     private javax.swing.JLabel labelNomeAlunoQuiz;
-    private javax.swing.JLabel ladoAB;
-    private javax.swing.JLabel ladoBC;
+    private javax.swing.JLabel labelOAnguloA;
+    private javax.swing.JLabel labelOAnguloB;
+    private javax.swing.JLabel labelPerimetroQuiz;
+    private javax.swing.JLabel labelQuestaoNumero;
+    private javax.swing.JLabel labelQuestaoTexto;
+    private javax.swing.JLabel labelRespostaAnguloC;
+    private javax.swing.JLabel labelRespostaArea;
+    private javax.swing.JLabel labelRespostaLadoCA;
+    private javax.swing.JLabel labelRespostaPerimetro;
+    private javax.swing.JLabel labelanguloA;
+    private javax.swing.JLabel labelanguloB;
+    private javax.swing.JLabel labelladoAB;
+    private javax.swing.JLabel labelladoBC;
     private javax.swing.JTextField txtAnguloC;
     private javax.swing.JTextField txtAreaA;
     private javax.swing.JTextField txtLadoCA;

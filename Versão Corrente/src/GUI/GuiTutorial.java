@@ -9,7 +9,7 @@ import NEGOCIO.*;
 
 /**
  *
- * @author cesar
+ * @author Bernardo Gouvêa
  */
 public class GuiTutorial extends javax.swing.JFrame {
 
@@ -31,33 +31,44 @@ public class GuiTutorial extends javax.swing.JFrame {
     private void initComponents() {
 
         panelTutorial = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtAreaTutorialJogo = new javax.swing.JTextArea();
         labelAlunoTutorial = new javax.swing.JLabel();
-        botaoSairTutorial = new javax.swing.JButton();
         labelNomeAlunoTutorial = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        labelJogoFeitoPorTutorial = new javax.swing.JLabel();
+        botaoFinalizarTutorial = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtAreaTutorialJogo.setColumns(20);
-        txtAreaTutorialJogo.setRows(5);
-        txtAreaTutorialJogo.setText("\nb) Eu vejo o problema de vocês como um Jogo que tem vários Quiz (list de quiz). Um Quiz \ntem várias instâncias de Questao. Cada Questao tem um Triangulo e as respostas do \naluno para as perguntas (área, perímetro, etc).\n\n\nd)salvando todo o Jogo (e seus respectivos objetos associados) em um único \narquivo xml que seria carregado a cada nova execução do programa.\n\n\ne) Eu vejo a parte de estatísticas do jogo como algo similar ao que está no jogo da \nortografia (represente os totais em uma classe, isolando esses totais de como eles \npodem ser apresentados em um arquivo ou em uma tela de resultado). \n\n\n");
-        jScrollPane1.setViewportView(txtAreaTutorialJogo);
+        panelTutorial.setBackground(java.awt.Color.white);
+        panelTutorial.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+        panelTutorial.setPreferredSize(new java.awt.Dimension(650, 500));
 
+        labelAlunoTutorial.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         labelAlunoTutorial.setText("Aluno:");
-
-        botaoSairTutorial.setText("Finalizar Tutorial ");
-        botaoSairTutorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSairTutorialActionPerformed(evt);
-            }
-        });
 
         labelNomeAlunoTutorial.setText("NomeAluno");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Tutorial do Jogo");
+
+        labelJogoFeitoPorTutorial.setText("Um jogo feito por: Bernardo Gouvêa, César Barbosa, Lucas Guilhon");
+
+        botaoFinalizarTutorial.setText("Finalizar Tutorial");
+        botaoFinalizarTutorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoFinalizarTutorialActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setBorder(null);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Iniciando o Quiz Trigonometria:\n     O Quiz apresentará questões para que você responda os seguintes itens:\n\n          - Dados 2 lados de um Triângulo qualquer, calcule o terceiro lado deste Triângulo.\n\n          - Dados 2 ângulos de um Triângulo qualquer, calcule o terceiro ângulo deste \nTriângulo.\n\n          - Dados 2 lados de um Triângulo qualquer, e calculado o terceiro lado anteriormente,\nencontre o Perímetro do Triângulo.\n\n          - Dados 2 lados e 2 ângulos e, calculado o terceiro lado e terceiro ângulo, encontre \na área do Triângulo.\n\n     Ao final de todas as questões respondidas, você será apresentado ao seu resultado e ao\nseu aproveitamento.\n\n     O Quiz pode ser feito quantas vezes quiser.\n     Todo resultado e aproveitamento de cada aluno será armazenado e mostrado ao\nprofessor da matéria.");
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout panelTutorialLayout = new javax.swing.GroupLayout(panelTutorial);
         panelTutorial.setLayout(panelTutorialLayout);
@@ -65,33 +76,42 @@ public class GuiTutorial extends javax.swing.JFrame {
             panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTutorialLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelTutorialLayout.createSequentialGroup()
-                        .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botaoSairTutorial)
-                            .addComponent(jScrollPane1))
-                        .addGap(24, 24, 24))
-                    .addGroup(panelTutorialLayout.createSequentialGroup()
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTutorialLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 430, Short.MAX_VALUE)
                         .addComponent(labelAlunoTutorial)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelNomeAlunoTutorial)
-                        .addGap(141, 141, 141))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTutorialLayout.createSequentialGroup()
+                        .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelTutorialLayout.createSequentialGroup()
+                                .addComponent(botaoFinalizarTutorial)
+                                .addGap(80, 80, 80)
+                                .addComponent(labelJogoFeitoPorTutorial)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(24, 24, 24))))
         );
         panelTutorialLayout.setVerticalGroup(
             panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTutorialLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelAlunoTutorial)
-                        .addComponent(labelNomeAlunoTutorial)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                .addGap(25, 25, 25)
-                .addComponent(botaoSairTutorial)
+                    .addGroup(panelTutorialLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel1))
+                    .addGroup(panelTutorialLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelNomeAlunoTutorial)
+                            .addComponent(labelAlunoTutorial))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(panelTutorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelJogoFeitoPorTutorial, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botaoFinalizarTutorial, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
@@ -99,7 +119,7 @@ public class GuiTutorial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelTutorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelTutorial, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,9 +129,9 @@ public class GuiTutorial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoSairTutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairTutorialActionPerformed
+    private void botaoFinalizarTutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarTutorialActionPerformed
         dispose();
-    }//GEN-LAST:event_botaoSairTutorialActionPerformed
+    }//GEN-LAST:event_botaoFinalizarTutorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,12 +169,14 @@ public class GuiTutorial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoSairTutorial;
+    private javax.swing.JButton botaoFinalizarTutorial;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelAlunoTutorial;
+    private javax.swing.JLabel labelJogoFeitoPorTutorial;
     private javax.swing.JLabel labelNomeAlunoTutorial;
     private javax.swing.JPanel panelTutorial;
-    private javax.swing.JTextArea txtAreaTutorialJogo;
     // End of variables declaration//GEN-END:variables
+
 }

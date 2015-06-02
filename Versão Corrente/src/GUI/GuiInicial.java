@@ -4,28 +4,32 @@
  * and open the template in the editor.
  */
 package GUI;
+
 import NEGOCIO.*;
-;
+
+
+
 /**
  *
- * @author cesar
+ * @author Bernardo Gouvêa e Cesar Luis
  */
 public class GuiInicial extends javax.swing.JFrame {
+
     public static String auxLoginProfessor;
     public static String auxNomeAlunoInicial;
     public static String auxSenhaProfessor;
-   public static int MAXIMOQUESTOES = 4;
- public static int contador = 1;
- public static Resultado R;
+    public static int MAXIMOQUESTOES = 5;
+    public static int contador = 1;
+    public static Resultado R;
 
     public static void setContador() {
-       contador++;
+        contador++;
     }
-    
+
     public static void setContador(int cont) {
-       contador = cont;
+        contador = cont;
     }
- 
+
     public static int getMAXIMOQUESTOES() {
         return MAXIMOQUESTOES;
     }
@@ -59,13 +63,33 @@ public class GuiInicial extends javax.swing.JFrame {
         txtNomeAlunoInicial = new javax.swing.JTextField();
         botaoSairInicial = new javax.swing.JButton();
         labelErroSenhaProfessor = new javax.swing.JLabel();
+        labelUsuarioProfessor = new javax.swing.JLabel();
+        labelSenhaProfessor = new javax.swing.JLabel();
+        labelMateria = new javax.swing.JLabel();
+        labelProf = new javax.swing.JLabel();
+        labelAlunos = new javax.swing.JLabel();
+        labelNomeMateria = new javax.swing.JLabel();
+        labelNomeProf = new javax.swing.JLabel();
+        labelNomeAlunos = new javax.swing.JLabel();
+        labelLogoUnirio = new javax.swing.JLabel();
+        labelAlunoInsiraNomeAbaixo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(java.awt.Color.white);
+        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setMaximumSize(new java.awt.Dimension(55, 55));
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 500));
 
         labelAreaProfessorInicial.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelAreaProfessorInicial.setText("Área do Professor");
+
+        txtLoginProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoginProfessorActionPerformed(evt);
+            }
+        });
 
         txtSenhaProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,13 +111,12 @@ public class GuiInicial extends javax.swing.JFrame {
             }
         });
 
-        labelTituloQuizInicial.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labelTituloQuizInicial.setText("QUIZ DE TRIGONOMETRIA PLANA ");
+        labelTituloQuizInicial.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        labelTituloQuizInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/LogoQuiz.jpg"))); // NOI18N
 
         labelAlunoInicial.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelAlunoInicial.setText("Nome do Aluno:");
 
-        txtNomeAlunoInicial.setText("NomeAluno");
         txtNomeAlunoInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeAlunoInicialActionPerformed(evt);
@@ -107,61 +130,153 @@ public class GuiInicial extends javax.swing.JFrame {
             }
         });
 
+        labelUsuarioProfessor.setText("Usuário:");
+
+        labelSenhaProfessor.setText("Senha:");
+
+        labelMateria.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelMateria.setText("Matéria:");
+
+        labelProf.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelProf.setText("Prof.:");
+
+        labelAlunos.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        labelAlunos.setText("Alunos:");
+
+        labelNomeMateria.setText("Projeto e Construção de Sistemas");
+
+        labelNomeProf.setText("Alexandre Correa");
+
+        labelNomeAlunos.setText("Bernardo, César e Lucas");
+
+        labelLogoUnirio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/unirioLogo.jpg"))); // NOI18N
+
+        labelAlunoInsiraNomeAbaixo.setText("Aluno, insira seu nome abaixo:");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("TRIGONOMETRIA");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(labelLogoUnirio)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(labelAlunos)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelNomeAlunos))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(labelProf)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelNomeProf))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(labelMateria)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelNomeMateria)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(botaoSairInicial)
+                                    .addComponent(botaoIniciarQuizInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(53, 53, 53))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelAlunoInsiraNomeAbaixo)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(labelAlunoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtNomeAlunoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(43, 43, 43))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoEntrarProfessor))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(labelTituloQuizInicial)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                        .addComponent(labelErroSenhaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(labelTituloQuizInicial))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(botaoSairInicial)
-                            .addComponent(txtLoginProfessor)
-                            .addComponent(txtSenhaProfessor)
-                            .addComponent(labelAreaProfessorInicial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelErroSenhaProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(labelAreaProfessorInicial)
+                                .addGap(77, 77, 77))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelUsuarioProfessor, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(botaoEntrarProfessor)
+                                        .addGap(109, 109, 109)))
+                                .addGap(6, 6, 6))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(labelSenhaProfessor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtLoginProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSenhaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(14, 14, 14)))))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(labelAlunoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeAlunoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoIniciarQuizInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAreaProfessorInicial)
-                    .addComponent(labelTituloQuizInicial))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtLoginProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSenhaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoEntrarProfessor)
-                .addGap(16, 16, 16)
-                .addComponent(labelErroSenhaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(labelAreaProfessorInicial)
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelUsuarioProfessor)
+                            .addComponent(txtLoginProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelSenhaProfessor)
+                            .addComponent(txtSenhaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botaoEntrarProfessor)
+                        .addGap(116, 116, 116)
+                        .addComponent(labelErroSenhaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(labelTituloQuizInicial)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelAlunoInsiraNomeAbaixo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNomeAlunoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAlunoInicial)
-                            .addComponent(botaoIniciarQuizInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(txtNomeAlunoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoIniciarQuizInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addComponent(botaoSairInicial)
-                        .addGap(24, 24, 24))))
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelLogoUnirio)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(labelMateria)
+                                    .addComponent(labelNomeMateria))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(labelProf)
+                                    .addComponent(labelNomeProf))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(labelAlunos)
+                                    .addComponent(labelNomeAlunos))))
+                        .addGap(43, 43, 43))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -169,7 +284,7 @@ public class GuiInicial extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -202,15 +317,20 @@ public class GuiInicial extends javax.swing.JFrame {
 
     private void botaoEntrarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarProfessorActionPerformed
         // TODO add your handling code here:
-        auxLoginProfessor =  txtLoginProfessor.getText();
-        auxSenhaProfessor=  txtSenhaProfessor.getText();
+        auxLoginProfessor = txtLoginProfessor.getText();
+        auxSenhaProfessor = txtSenhaProfessor.getText();
         Avaliacao.verificaAvaliador();
-        if (Avaliacao.verificaAvaliador()){
-       new GuiProfessor().setVisible(true);
-        dispose();}
-        else
+        if (Avaliacao.verificaAvaliador()) {
+            new GuiProfessor().setVisible(true);
+            dispose();
+        } else {
             labelErroSenhaProfessor.setText("Erro de login e/ou senha");
+        }
     }//GEN-LAST:event_botaoEntrarProfessorActionPerformed
+
+    private void txtLoginProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginProfessorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLoginProfessorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,11 +372,22 @@ public class GuiInicial extends javax.swing.JFrame {
     private javax.swing.JButton botaoEntrarProfessor;
     private javax.swing.JButton botaoIniciarQuizInicial;
     private javax.swing.JButton botaoSairInicial;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelAlunoInicial;
+    private javax.swing.JLabel labelAlunoInsiraNomeAbaixo;
+    private javax.swing.JLabel labelAlunos;
     private javax.swing.JLabel labelAreaProfessorInicial;
     private javax.swing.JLabel labelErroSenhaProfessor;
+    private javax.swing.JLabel labelLogoUnirio;
+    private javax.swing.JLabel labelMateria;
+    private javax.swing.JLabel labelNomeAlunos;
+    private javax.swing.JLabel labelNomeMateria;
+    private javax.swing.JLabel labelNomeProf;
+    private javax.swing.JLabel labelProf;
+    private javax.swing.JLabel labelSenhaProfessor;
     private javax.swing.JLabel labelTituloQuizInicial;
+    private javax.swing.JLabel labelUsuarioProfessor;
     private javax.swing.JTextField txtLoginProfessor;
     private javax.swing.JTextField txtNomeAlunoInicial;
     private javax.swing.JPasswordField txtSenhaProfessor;

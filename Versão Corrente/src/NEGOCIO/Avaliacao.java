@@ -1,6 +1,11 @@
 package NEGOCIO;
-import GUI.*;
 
+/**
+ *
+ * @author Bernardo Gouvêa, Cesar Luis e Lucas Guilhon
+ */
+
+import GUI.*;
 
 public class Avaliacao {
 
@@ -22,13 +27,13 @@ public class Avaliacao {
     public static boolean verificaAvaliador() {
         return ((GuiInicial.auxLoginProfessor.equals("professor")) && (GuiInicial.auxSenhaProfessor.equals("admin")));
     }
-    
-    public static int getResult(){
-        return (Resultado.getResultadoAn() + Resultado.getResultadoLa()+ Resultado.getResultadoPe()+ Resultado.getResultadoAr());
+
+    public static int getResult() {
+        return (Resultado.getResultadoAn() + Resultado.getResultadoLa() + Resultado.getResultadoPe() + Resultado.getResultadoAr());
     }
 
     public static double getAproveitamento() {
-           return (100.0*(getResult() /(4.0 * GuiInicial.getMAXIMOQUESTOES())));
+        return (100.0 * (getResult() / (4.0 * GuiInicial.getMAXIMOQUESTOES())));
     }
 
 }

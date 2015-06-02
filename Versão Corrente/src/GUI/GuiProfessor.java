@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package GUI;
+
 import DAO.*;
 import NEGOCIO.*;
 import java.util.ArrayList;
+
 /**
  *
- * @author cesar
+ * @author Bernardo Gouvêa e Cesar Luis
  */
 public class GuiProfessor extends javax.swing.JFrame {
 
@@ -18,7 +20,7 @@ public class GuiProfessor extends javax.swing.JFrame {
      */
     public GuiProfessor() {
         initComponents();
-      
+
     }
 
     /**
@@ -39,6 +41,11 @@ public class GuiProfessor extends javax.swing.JFrame {
         labelExibirResultado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 500));
+
+        jPanel1.setBackground(java.awt.Color.white);
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 255)));
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 500));
 
         labelTituloAreaProfessor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelTituloAreaProfessor.setText("Área do Professor");
@@ -75,17 +82,22 @@ public class GuiProfessor extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(botaoEncerrarAvaliacao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                            .addComponent(botaoExibirResultados, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 348, Short.MAX_VALUE)
-                        .addComponent(botaoSairProfessor))
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelTituloAreaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(botaoEncerrarAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 469, Short.MAX_VALUE)
+                                .addComponent(botaoSairProfessor))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelTituloAreaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(botaoExibirResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,15 +106,12 @@ public class GuiProfessor extends javax.swing.JFrame {
                 .addComponent(labelTituloAreaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addComponent(botaoExibirResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(botaoSairProfessor))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(botaoEncerrarAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(botaoSairProfessor, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botaoEncerrarAvaliacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -110,7 +119,7 @@ public class GuiProfessor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,24 +132,23 @@ public class GuiProfessor extends javax.swing.JFrame {
     private void botaoExibirResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExibirResultadosActionPerformed
         Arquivo Ar = new Arquivo();
         ArrayList<String> As = Arquivo.getAvaliacao();
-         int n = As.size();
-         StringBuffer tmp = new StringBuffer();
-            for( int i = 0 ; i < n; i++ )
-            {
-            tmp.append( As.get(i) + "\n");
-            }
-            labelExibirResultado.setText(tmp.toString());
+        int n = As.size();
+        StringBuffer tmp = new StringBuffer();
+        for (int i = 0; i < n; i++) {
+            tmp.append(As.get(i) + "\n");
+        }
+        labelExibirResultado.setText(tmp.toString());
     }//GEN-LAST:event_botaoExibirResultadosActionPerformed
 
     private void botaoEncerrarAvaliacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEncerrarAvaliacaoActionPerformed
         // TODO add your handling code here:
-         new GuiInicial().setVisible(true);
+        new GuiInicial().setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoEncerrarAvaliacaoActionPerformed
 
     private void botaoSairProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairProfessorActionPerformed
         // TODO add your handling code here:
-         new GuiInicial().setVisible(true);
+        new GuiInicial().setVisible(true);
     }//GEN-LAST:event_botaoSairProfessorActionPerformed
 
     /**

@@ -1,5 +1,10 @@
 package NEGOCIO;
 
+/**
+ *
+ * @author Bernardo Gouvêa, Cesar Luis e Lucas Guilhon
+ */
+
 import GUI.*;
 import static GUI.GuiQuiz.auxAnguloC;
 import static GUI.GuiQuiz.auxAreaA;

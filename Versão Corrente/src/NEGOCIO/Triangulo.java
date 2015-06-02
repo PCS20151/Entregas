@@ -1,6 +1,8 @@
 package NEGOCIO;
-
-//criado por Cesar Luis Barbosa
+/**
+ *
+ * @author Bernardo Gouvêa e Cesar Luis
+ */
 public class Triangulo {
 
     public static int lado1 = 0;
@@ -23,7 +25,7 @@ public class Triangulo {
     public Triangulo() {
         boolean a = true;
         boolean b = true;
-        while ((a == true)||(b ==true)) {
+        while ((a == true) || (b == true)) {
             gerarTriangulo();
             gerarAngulos();
             getPerimetro();
@@ -61,20 +63,17 @@ public class Triangulo {
 
     public int getArea() {
         int p = getPerimetro();
-        p =  p  / 2;
+        p = p / 2;
         double Aes = Math.sqrt((p * (p - this.getLado(1)) * (p - this.getLado(2)) * (p - this.getLado(3))));
-        return (int)Aes;
+        return (int) Aes;
     }
 
     public boolean existriangulo() {
-       if(lado1<lado2+lado3 && lado2<lado1+lado3 && lado3<lado1+lado2)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+        if (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void gerarTriangulo() {
@@ -95,9 +94,11 @@ public class Triangulo {
             int lado1x = (int) lado1a;
             int lado2x = (int) lado2a;
             int lado3x = (int) lado3a;
-            if(lado1x<lado2x+lado3x && lado2x<lado1x+lado3x && lado3x<lado1x+lado2x){
-            k = true;}
-            else k = false;
+            if (lado1x < lado2x + lado3x && lado2x < lado1x + lado3x && lado3x < lado1x + lado2x) {
+                k = true;
+            } else {
+                k = false;
+            }
             existe = k;
 
             if (existe) {
@@ -105,7 +106,7 @@ public class Triangulo {
                 lado2 = lado2x;
                 lado3 = lado3x;
             }
-            
+
         }
 
     }
@@ -124,11 +125,12 @@ public class Triangulo {
         boolean c = Double.isNaN(angulo3);
         return ((a || b) || c);
     }
-    
-      public boolean verificaArea() {
-       if (this.getArea()>= 1){
-           return false;
-           }
-      else return true;
-              }
+
+    public boolean verificaArea() {
+        if (this.getArea() >= 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

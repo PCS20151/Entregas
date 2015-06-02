@@ -7,16 +7,16 @@ package GUI;
 
 import DAO.Arquivo;
 import static GUI.GuiQuiz.Qz;
+import java.util.*;
 import NEGOCIO.Avaliacao;
 import NEGOCIO.Resultado;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author cesar
+ * @author Bernardo Gouvêa e Cesar Luis
  */
 public class GuiFinal extends javax.swing.JFrame {
 
@@ -34,7 +34,7 @@ public class GuiFinal extends javax.swing.JFrame {
         labelQuantidadeAcertosArea.setText(String.valueOf(Qz.R.getResultadoAr()));
         labelQuantidadeQuestao.setText(String.valueOf(maximo));
         labelQuantidadeAcertoQuestao.setText(String.valueOf(Avaliacao.getResult()));
-        
+
     }
 
     /**
@@ -65,12 +65,18 @@ public class GuiFinal extends javax.swing.JFrame {
         labelQuantidadeAcertosAngulos = new javax.swing.JLabel();
         labelQuantidadeAcertosArea = new javax.swing.JLabel();
         labelQuantidadeAcertosPerimetro = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelJogoFeitoPorFinal = new javax.swing.JLabel();
         labelAlunoFinal = new javax.swing.JLabel();
         labelNomeAlunoFinal = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 500));
+
+        panelFinal.setBackground(java.awt.Color.white);
+        panelFinal.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 0, 255)));
+        panelFinal.setAutoscrolls(true);
+        panelFinal.setPreferredSize(new java.awt.Dimension(600, 500));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Você realizou o Quiz de Trigonometria Plana");
@@ -91,16 +97,19 @@ public class GuiFinal extends javax.swing.JFrame {
 
         labelSeuAproveitamento.setText("Seu Aproveitamento:");
 
+        labelPorcentoAproveitamento.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelPorcentoAproveitamento.setText("jLabel3");
 
         labelSeuResultado.setText("Seu Resultado:");
 
         jLabel5.setText("Das");
 
+        labelQuantidadeQuestao.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelQuantidadeQuestao.setText("jLabel6");
 
         jLabel7.setText("questões, você acertou");
 
+        labelQuantidadeAcertoQuestao.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelQuantidadeAcertoQuestao.setText("jLabel8");
 
         labelAcertosPerimetro.setText("Acertos  em questões sobre  Perímetro:");
@@ -111,16 +120,21 @@ public class GuiFinal extends javax.swing.JFrame {
 
         labelAcertosLados.setText("Acertos em questões sobre Lados:");
 
+        labelQuantidadeAcertosLados.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelQuantidadeAcertosLados.setText("jLabel8");
 
+        labelQuantidadeAcertosAngulos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelQuantidadeAcertosAngulos.setText("jLabel9");
 
+        labelQuantidadeAcertosArea.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelQuantidadeAcertosArea.setText("jLabel10");
 
+        labelQuantidadeAcertosPerimetro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         labelQuantidadeAcertosPerimetro.setText("jLabel11");
 
-        jLabel2.setText("Um jogo feito por: Bernardo Gouvêa, César Barbosa, Lucas Guilhon");
+        labelJogoFeitoPorFinal.setText("Um jogo feito por: Bernardo Gouvêa, César Barbosa, Lucas Guilhon");
 
+        labelAlunoFinal.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         labelAlunoFinal.setText("Aluno:");
 
         labelNomeAlunoFinal.setText("NomeAluno");
@@ -132,71 +146,69 @@ public class GuiFinal extends javax.swing.JFrame {
         panelFinalLayout.setHorizontalGroup(
             panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelFinalLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
                 .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelFinalLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
                         .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelSeuResultado)
                             .addGroup(panelFinalLayout.createSequentialGroup()
+                                .addComponent(labelAcertosArea)
+                                .addGap(56, 56, 56)
                                 .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(labelAlunoFinal)
-                                        .addGroup(panelFinalLayout.createSequentialGroup()
-                                            .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(labelSeuAproveitamento)
-                                                .addComponent(labelAcertosLados)
-                                                .addComponent(labelAcertosAngulos)
-                                                .addComponent(labelAcertosArea))
-                                            .addGap(23, 23, 23)
-                                            .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(labelQuantidadeAcertosAngulos)
-                                                .addComponent(labelQuantidadeAcertosArea)
-                                                .addComponent(labelQuantidadeAcertosLados)
-                                                .addGroup(panelFinalLayout.createSequentialGroup()
-                                                    .addComponent(labelPorcentoAproveitamento)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel3))
-                                                .addGroup(panelFinalLayout.createSequentialGroup()
-                                                    .addComponent(jLabel5)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(labelQuantidadeQuestao)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel7)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(labelQuantidadeAcertoQuestao)))
-                                            .addGap(9, 9, 9)))
+                                    .addComponent(labelQuantidadeAcertosArea)
+                                    .addComponent(labelQuantidadeAcertosPerimetro)
+                                    .addComponent(labelQuantidadeAcertosAngulos)
+                                    .addComponent(labelQuantidadeAcertosLados))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panelFinalLayout.createSequentialGroup()
+                        .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelJogoFeitoPorFinal)
+                            .addGroup(panelFinalLayout.createSequentialGroup()
+                                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelSeuAproveitamento)
+                                    .addComponent(labelAcertosLados)
+                                    .addComponent(labelAcertosAngulos)
+                                    .addComponent(labelAcertosPerimetro))
+                                .addGap(8, 8, 8)
+                                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelFinalLayout.createSequentialGroup()
-                                        .addComponent(labelAcertosPerimetro)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(labelQuantidadeAcertosPerimetro)))
-                                .addGap(18, 18, 18)
-                                .addComponent(labelNomeAlunoFinal))))
-                    .addGroup(panelFinalLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(labelPorcentoAproveitamento)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel3))
+                                    .addGroup(panelFinalLayout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelQuantidadeQuestao)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelQuantidadeAcertoQuestao)))))
+                        .addContainerGap(176, Short.MAX_VALUE))))
             .addGroup(panelFinalLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addContainerGap()
                 .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelFinalLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFinalLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelAlunoFinal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelNomeAlunoFinal))
                     .addGroup(panelFinalLayout.createSequentialGroup()
                         .addComponent(botaoJogarNovamente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoEncerrarJogoFinal)
-                        .addGap(101, 101, 101))))
+                        .addComponent(botaoEncerrarJogoFinal)))
+                .addContainerGap())
         );
         panelFinalLayout.setVerticalGroup(
             panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelFinalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAlunoFinal)
-                    .addComponent(labelNomeAlunoFinal))
-                .addGap(1, 1, 1)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelNomeAlunoFinal)
+                        .addComponent(labelAlunoFinal))
+                    .addComponent(jLabel1))
+                .addGap(35, 35, 35)
                 .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelSeuResultado)
                     .addComponent(jLabel5)
@@ -213,31 +225,31 @@ public class GuiFinal extends javax.swing.JFrame {
                     .addComponent(labelAcertosLados)
                     .addComponent(labelQuantidadeAcertosLados))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelAcertosAngulos)
                     .addComponent(labelQuantidadeAcertosAngulos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAcertosArea)
-                    .addComponent(labelQuantidadeAcertosArea))
+                    .addComponent(labelAcertosPerimetro)
+                    .addComponent(labelQuantidadeAcertosArea, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAcertosPerimetro)
-                    .addComponent(labelQuantidadeAcertosPerimetro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botaoEncerrarJogoFinal, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(botaoJogarNovamente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(44, 44, 44)
-                .addComponent(jLabel2)
-                .addContainerGap())
+                    .addComponent(labelQuantidadeAcertosPerimetro)
+                    .addComponent(labelAcertosArea))
+                .addGap(60, 60, 60)
+                .addGroup(panelFinalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoJogarNovamente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoEncerrarJogoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(labelJogoFeitoPorFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFinal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelFinal, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +260,7 @@ public class GuiFinal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoJogarNovamenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarNovamenteActionPerformed
-       try {
+        try {
             Arquivo.salvarQuestão(Qz);
         } catch (IOException ex) {
             Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
@@ -263,9 +275,13 @@ public class GuiFinal extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        GuiInicial.contador = 0;
-       new GuiInicial().setVisible(true);
+        GuiInicial.contador = 1;
+        new GuiInicial().setVisible(true);
         dispose();
+
+//        GuiInicial.contador = 0;
+//        new GuiInicial().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_botaoJogarNovamenteActionPerformed
 
     private void botaoEncerrarJogoFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEncerrarJogoFinalActionPerformed
@@ -288,6 +304,10 @@ public class GuiFinal extends javax.swing.JFrame {
         //Tutorial para Ensino
         new GuiTutorialEnsino().setVisible(true);
         dispose();
+//        Salvar para arquivo.
+//        Tutorial para Ensino
+//        new GuiTutorialEnsino().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_botaoEncerrarJogoFinalActionPerformed
 
     /**
@@ -329,7 +349,6 @@ public class GuiFinal extends javax.swing.JFrame {
     private javax.swing.JButton botaoEncerrarJogoFinal;
     private javax.swing.JButton botaoJogarNovamente;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -338,6 +357,7 @@ public class GuiFinal extends javax.swing.JFrame {
     private javax.swing.JLabel labelAcertosLados;
     private javax.swing.JLabel labelAcertosPerimetro;
     private javax.swing.JLabel labelAlunoFinal;
+    private javax.swing.JLabel labelJogoFeitoPorFinal;
     private javax.swing.JLabel labelNomeAlunoFinal;
     private javax.swing.JLabel labelPorcentoAproveitamento;
     private javax.swing.JLabel labelQuantidadeAcertoQuestao;
