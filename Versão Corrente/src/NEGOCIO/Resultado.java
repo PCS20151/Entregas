@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package NEGOCIO;
+
 import GUI.*;
 import static GUI.GuiQuiz.auxAnguloC;
 import static GUI.GuiQuiz.auxAreaA;
@@ -27,15 +23,16 @@ public class Resultado {
     public static int getResultadoPe() {
         return ResultadoPe;
     }
+
     public static int getResultadoAr() {
         return ResultadoAr;
     }
 
     public Resultado() {
-    ResultadoAn = 0;
-    ResultadoLa = 0;
-    ResultadoPe = 0;
-    ResultadoAr = 0;
+        ResultadoAn = 0;
+        ResultadoLa = 0;
+        ResultadoPe = 0;
+        ResultadoAr = 0;
     }
 
     static int ResultadoAn;
@@ -43,39 +40,38 @@ public class Resultado {
     static int ResultadoPe;
     static int ResultadoAr;
 
-    public static void setResultado(Double auxLadoCA,Double auxAreaA,Double auxPerim,Double auxAnguloC) {
-         if (auxLadoCA == GuiQuiz.Qz.Q.T.getLado3()) {
-            setResultadoGeralLa();}
-         
-            int areaaux = (int)GuiQuiz.auxAreaA;
-          if ((((GuiQuiz.Qz.Q.T.getArea()))==(areaaux))){ 
-            setResultadoGeralAr();}
-      
-            if (auxPerim == GuiQuiz.Qz.Q.T.getPerimetro()) {
-            setResultadoGeralPe();}
-            
-             int angaux = (int) GuiQuiz.auxAnguloC;
-            if ((((int)((GuiQuiz.Qz.Q.T.getAngulo3())-3))<=(angaux))&& ((angaux) <= ((int)((GuiQuiz.Qz.Q.T.getAngulo3())+3)))) {
-            setResultadoGeralAn();
-      
-            }
-            
-            }
-    
+    public static void setResultado(Double auxLadoCA, Double auxAreaA, Double auxPerim, Double auxAnguloC) {
+        if (auxLadoCA == GuiQuiz.Qz.Q.T.getLado3()) {
+            setResultadoGeralLa();
+        }
 
-    
-    
-    
-        public static void setResultadoGeralAn() {
+        int areaaux = (int) GuiQuiz.auxAreaA;
+        if ((((GuiQuiz.Qz.Q.T.getArea())) == (areaaux))) {
+            setResultadoGeralAr();
+        }
+
+        if (auxPerim == GuiQuiz.Qz.Q.T.getPerimetro()) {
+            setResultadoGeralPe();
+        }
+
+        int angaux = (int) GuiQuiz.auxAnguloC;
+        if ((((int) ((GuiQuiz.Qz.Q.T.getAngulo3()) - 3)) <= (angaux)) && ((angaux) <= ((int) ((GuiQuiz.Qz.Q.T.getAngulo3()) + 3)))) {
+            setResultadoGeralAn();
+
+        }
+
+    }
+
+    public static void setResultadoGeralAn() {
         ResultadoAn++;
     }
 
     public static void setResultadoGeralLa() {
-          ResultadoLa++;
+        ResultadoLa++;
     }
 
     public static void setResultadoGeralPe() {
-         ResultadoPe++;
+        ResultadoPe++;
     }
 
     public static void setResultadoGeralAr() {

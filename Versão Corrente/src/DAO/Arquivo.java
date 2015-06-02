@@ -37,7 +37,7 @@ private static final String QuizTrigonometria = "ortografia.xml";
         } 
     } 
 
-    public void exportarResultado() throws IOException {
+    public static void exportarResultado() throws IOException {
         FileWriter arq = new FileWriter("resultado.txt");
         PrintWriter gravarArq = new PrintWriter(arq);
         int i, n = resultado.size();

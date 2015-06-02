@@ -5,9 +5,14 @@
  */
 package GUI;
 
+import DAO.Arquivo;
 import static GUI.GuiQuiz.Qz;
 import NEGOCIO.Avaliacao;
 import NEGOCIO.Resultado;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -250,6 +255,23 @@ public class GuiFinal extends javax.swing.JFrame {
 
     private void botaoEncerrarJogoFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEncerrarJogoFinalActionPerformed
         //Salvar para arquivo.
+         Arquivo Ar = new Arquivo();
+        ArrayList<String> As = Arquivo.getAvaliacao();
+        try {
+            Arquivo.salvarQuestão(Qz);
+        } catch (IOException ex) {
+            Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            Arquivo.salvarQuiz(Qz);
+        } catch (IOException ex) {
+            Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            Arquivo.exportarResultado();
+        } catch (IOException ex) {
+            Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Tutorial para Ensino
         new GuiTutorialEnsino().setVisible(true);
         dispose();
