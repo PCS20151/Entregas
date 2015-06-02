@@ -33,19 +33,22 @@ private static final String QuizTrigonometria = "ortografia.xml";
             }
             arq.close();
         } catch (IOException e){
-            System.err.printf("Erro na abertura do arquivo: %s.", e.getMessage());
         } 
     } 
 
     public static void exportarResultado() throws IOException {
+        Arquivo Ar = new Arquivo();
+        ArrayList<String> As = Arquivo.getAvaliacao();
+         int n = As.size();
         FileWriter arq = new FileWriter("resultado.txt");
         PrintWriter gravarArq = new PrintWriter(arq);
-        int i, n = resultado.size();
+        int i;
         for (i = 0; i < n; i++) {
             gravarArq.printf("%s%n", resultado.get(i));
         }
         gravarArq.printf("Nome:" + Avaliacao.nome + "   Pontuação: " + Avaliacao.Aproveitamento);
         gravarArq.close();
+
     }
     
     public static void salvarQuestão(Quiz Qz) throws IOException {

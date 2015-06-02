@@ -8,7 +8,7 @@ public class Avaliacao {
     public static String nome;
 
     public Avaliacao() {
-        nome = "Aluno";
+        nome = getNome();
     }
 
     public static String getNome() {

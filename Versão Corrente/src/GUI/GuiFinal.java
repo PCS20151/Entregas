@@ -248,15 +248,28 @@ public class GuiFinal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoJogarNovamenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarNovamenteActionPerformed
-       GuiInicial.contador = 0;
+       try {
+            Arquivo.salvarQuestão(Qz);
+        } catch (IOException ex) {
+            Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            Arquivo.salvarQuiz(Qz);
+        } catch (IOException ex) {
+            Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            Arquivo.exportarResultado();
+        } catch (IOException ex) {
+            Logger.getLogger(GuiFinal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        GuiInicial.contador = 0;
        new GuiInicial().setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoJogarNovamenteActionPerformed
 
     private void botaoEncerrarJogoFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEncerrarJogoFinalActionPerformed
         //Salvar para arquivo.
-         Arquivo Ar = new Arquivo();
-        ArrayList<String> As = Arquivo.getAvaliacao();
         try {
             Arquivo.salvarQuestão(Qz);
         } catch (IOException ex) {
