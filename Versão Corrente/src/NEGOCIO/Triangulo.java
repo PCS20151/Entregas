@@ -6,19 +6,31 @@ public class Triangulo {
     public static int lado1 = 0;
     public static int lado2 = 0;
     public static int lado3 = 0;
+
+    public int getLado3() {
+        return lado3;
+    }
     public static double angulo1 = 0;
     public static double angulo2 = 0;
     public static double angulo3 = 0;
-    public static int perimetro = 0;
-    public static double area = 0;
+
+    public double getAngulo3() {
+        return angulo3;
+    }
+//    public static int perimetro = 0;
+//    public static double area = 0;
 
     public Triangulo() {
         boolean a = true;
-
-        while (a == true) {
+        boolean b = true;
+        while ((a == true)||(b ==true)) {
             gerarTriangulo();
             gerarAngulos();
+            getPerimetro();
+            getArea();
+            getLado3();
             a = verificaGabErr();
+            b = verificaArea();
         }
     }
 
@@ -43,32 +55,31 @@ public class Triangulo {
     }
 
     public int getPerimetro() {
+        int perimetro = (lado1 + lado2 + lado3);
         return perimetro;
     }
 
-    public double getArea() {
-        return area;
+    public int getArea() {
+        int p = getPerimetro();
+        p =  p  / 2;
+        double Aes = Math.sqrt((p * (p - this.getLado(1)) * (p - this.getLado(2)) * (p - this.getLado(3))));
+        return (int)Aes;
     }
 
     public boolean existriangulo() {
-        return (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2);
-
-    }
-
-    public void perimetro() {
-        perimetro = lado1 + lado2 + lado3;
-
-    }
-
-    public void Area() {
-
-        int p = perimetro / 2;
-        double Aes = Math.sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
-        area = Aes;
+       if(lado1<lado2+lado3 && lado2<lado1+lado3 && lado3<lado1+lado2)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
     }
 
     public void gerarTriangulo() {
         boolean existe = false;
+        boolean k = false;
         while (existe == false) {
             int Ax = (int) (Math.round(Math.random() * 10));
             int Ay = (int) (Math.round(Math.random() * 10));
@@ -84,8 +95,9 @@ public class Triangulo {
             int lado1x = (int) lado1a;
             int lado2x = (int) lado2a;
             int lado3x = (int) lado3a;
-
-            boolean k = existriangulo();
+            if(lado1x<lado2x+lado3x && lado2x<lado1x+lado3x && lado3x<lado1x+lado2x){
+            k = true;}
+            else k = false;
             existe = k;
 
             if (existe) {
@@ -93,6 +105,7 @@ public class Triangulo {
                 lado2 = lado2x;
                 lado3 = lado3x;
             }
+            
         }
 
     }
@@ -111,5 +124,11 @@ public class Triangulo {
         boolean c = Double.isNaN(angulo3);
         return ((a || b) || c);
     }
-
+    
+      public boolean verificaArea() {
+       if (this.getArea()>= 1){
+           return false;
+           }
+      else return true;
+              }
 }

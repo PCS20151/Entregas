@@ -1,0 +1,10 @@
+Bernardo: 90
+Cesar: 95
+Bernard:100
+Bernardo: 90
+Cesar: 95
+Bernard:100
+
+teste 1
+
+teste teste FUNCIONANDO!

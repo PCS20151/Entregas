@@ -1,7 +1,11 @@
 package DAO;
 
+import GUI.GuiQuiz;
 import java.io.BufferedReader;
 import NEGOCIO.Avaliacao;
+import NEGOCIO.Quiz;
+import java.beans.XMLEncoder;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,28 +14,28 @@ import java.util.ArrayList;
 
 public class Arquivo {
 
-    public static ArrayList<String> resultado;
+private static ArrayList<String> resultado = new ArrayList();
+private static final String QuizTrigonometria = "ortografia.xml";
+
 
     public Arquivo() {
-        ArrayList<String> resultado = new ArrayList();
         importar(resultado);
     }
 
-    public void importar(ArrayList<String> resultado) {
-        try {
+    public void importar(ArrayList<String> resultado){
+        try{
             FileReader arq = new FileReader("resultado.txt");
             BufferedReader lerArq = new BufferedReader(arq);
             String linha = lerArq.readLine();
-            while (linha != null) {
+            while (linha != null){
                 resultado.add(linha);
-                linha = lerArq.readLine();
+            linha = lerArq.readLine();
             }
-
             arq.close();
-        } catch (IOException e) {
+        } catch (IOException e){
             System.err.printf("Erro na abertura do arquivo: %s.", e.getMessage());
-        }
-    }
+        } 
+    } 
 
     public void exportarResultado() throws IOException {
         FileWriter arq = new FileWriter("resultado.txt");
@@ -42,6 +46,27 @@ public class Arquivo {
         }
         gravarArq.printf("Nome:" + Avaliacao.nome + "   Pontuação: " + Avaliacao.Aproveitamento);
         gravarArq.close();
+    }
+    
+    public static void salvarQuestão(Quiz Qz) throws IOException {
+        try (XMLEncoder xmlEncoder = new XMLEncoder(new FileOutputStream(QuizTrigonometria))) {
+            xmlEncoder.writeObject(GuiQuiz.Qz.Q.T);
+            xmlEncoder.writeObject(GuiQuiz.Qz.Q);
+            
+        }
+    }
+    
+    public static void salvarQuiz(Quiz Qz) throws IOException {
+        try (XMLEncoder xmlEncoder = new XMLEncoder(new FileOutputStream(QuizTrigonometria))) {
+            xmlEncoder.writeObject(GuiQuiz.Qz.R);
+            xmlEncoder.writeObject(GuiQuiz.Qz.Av);
+        }
+    }
+    
+    public static ArrayList<String> getAvaliacao(){
+    ArrayList<String> Av = new ArrayList<String>();
+    Av = resultado;
+    return Av;
     }
 
 }

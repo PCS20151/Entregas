@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package GUI;
-import static GUI.GuiQuiz.auxAnguloC;
-import static GUI.GuiQuiz.auxAreaA;
-import static GUI.GuiQuiz.auxLadoCA;
-import static GUI.GuiQuiz.auxPerim;
 import NEGOCIO.*;
 ;
 /**
@@ -18,11 +14,29 @@ public class GuiInicial extends javax.swing.JFrame {
     public static String auxLoginProfessor;
     public static String auxNomeAlunoInicial;
     public static String auxSenhaProfessor;
-    /**
-     * Creates new form GUI_A
-     */
+   public static int MAXIMOQUESTOES = 4;
+ public static int contador = 1;
+ public static Resultado R;
+
+    public static void setContador() {
+       contador++;
+    }
+    
+    public static void setContador(int cont) {
+       contador = cont;
+    }
+ 
+    public static int getMAXIMOQUESTOES() {
+        return MAXIMOQUESTOES;
+    }
+
     public GuiInicial() {
+        R = new Resultado();
         initComponents();
+    }
+
+    public static int getContador() {
+        return contador;
     }
 
     /**
@@ -169,7 +183,6 @@ public class GuiInicial extends javax.swing.JFrame {
     private void botaoIniciarQuizInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIniciarQuizInicialActionPerformed
         // TODO add your handling code here:
         Avaliacao.setNome(txtNomeAlunoInicial.getText());
-       // Quiz Qz = new Quiz();
         new GuiQuiz().setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoIniciarQuizInicialActionPerformed

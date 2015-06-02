@@ -1,8 +1,6 @@
 package NEGOCIO;
 import GUI.*;
 
-import java.io.*;
-import java.util.*;
 
 public class Avaliacao {
 
@@ -10,7 +8,7 @@ public class Avaliacao {
     public static String nome;
 
     public Avaliacao() {
-        //TODO
+        nome = "Aluno";
     }
 
     public static String getNome() {
@@ -24,9 +22,13 @@ public class Avaliacao {
     public static boolean verificaAvaliador() {
         return ((GuiInicial.auxLoginProfessor.equals("professor")) && (GuiInicial.auxSenhaProfessor.equals("admin")));
     }
+    
+    public static int getResult(){
+        return (Resultado.getResultadoAn() + Resultado.getResultadoLa()+ Resultado.getResultadoPe()+ Resultado.getResultadoAr());
+    }
 
-    public double getAproveitamento() {
-        return ((Quiz.ResultadoAn + Quiz.ResultadoLa + Quiz.ResultadoPe + Quiz.ResultadoAr) / (4 * 10));
+    public static double getAproveitamento() {
+           return (100.0*(getResult() /(4.0 * GuiInicial.getMAXIMOQUESTOES())));
     }
 
 }
