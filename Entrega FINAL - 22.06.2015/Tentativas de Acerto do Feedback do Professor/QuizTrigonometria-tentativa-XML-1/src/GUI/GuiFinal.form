@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[600, 500]"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="panelFinal" alignment="0" pref="700" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="panelFinal" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="panelFinal">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+            <MatteColorBorder>
+              <Color PropertyName="color" blue="ff" green="0" red="ff" type="rgb"/>
+            </MatteColorBorder>
+          </Border>
+        </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[600, 500]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labelSeuResultado" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="labelAcertosArea" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="labelQuantidadeAcertosArea" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelQuantidadeAcertosPerimetro" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelQuantidadeAcertosAngulos" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelQuantidadeAcertosLados" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="labelJogoFeitoPorFinal" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="labelSeuAproveitamento" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelAcertosLados" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelAcertosAngulos" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelAcertosPerimetro" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="labelPorcentoAproveitamento" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="labelQuantidadeQuestao" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="labelQuantidadeAcertoQuestao" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="176" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="labelAlunoFinal" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="labelNomeAlunoFinal" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="botaoJogarNovamente" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="botaoEncerrarJogoFinal" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelNomeAlunoFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelAlunoFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelSeuResultado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelQuantidadeQuestao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelQuantidadeAcertoQuestao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelSeuAproveitamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPorcentoAproveitamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelAcertosLados" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelQuantidadeAcertosLados" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="labelAcertosAngulos" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelQuantidadeAcertosAngulos" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelAcertosPerimetro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelQuantidadeAcertosArea" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelQuantidadeAcertosPerimetro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelAcertosArea" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="botaoJogarNovamente" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="botaoEncerrarJogoFinal" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <Component id="labelJogoFeitoPorFinal" min="-2" pref="14" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Voc&#xea; realizou o Quiz de Trigonometria Plana"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="botaoEncerrarJogoFinal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Encerrar Jogo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoEncerrarJogoFinalActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="botaoJogarNovamente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Jogar Novamente"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoJogarNovamenteActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelSeuAproveitamento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Seu Aproveitamento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelPorcentoAproveitamento">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel3"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelSeuResultado">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Seu Resultado:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Das"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelQuantidadeQuestao">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel6"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="quest&#xf5;es, voc&#xea; acertou"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelQuantidadeAcertoQuestao">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel8"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelAcertosPerimetro">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Acertos  em quest&#xf5;es sobre  Per&#xed;metro:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelAcertosArea">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Acertos  em quest&#xf5;es sobre  &#xc1;rea:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelAcertosAngulos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Acertos em quest&#xf5;es sobre  &#xc2;ngulos:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelAcertosLados">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Acertos em quest&#xf5;es sobre Lados:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelQuantidadeAcertosLados">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel8"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelQuantidadeAcertosAngulos">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel9"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelQuantidadeAcertosArea">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel10"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelQuantidadeAcertosPerimetro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel11"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelJogoFeitoPorFinal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Um jogo feito por: Bernardo Gouv&#xea;a, C&#xe9;sar Barbosa, Lucas Guilhon"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelAlunoFinal">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="13" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aluno:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelNomeAlunoFinal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NomeAluno"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="% de Aproveitamento"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
